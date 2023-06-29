@@ -47,6 +47,14 @@ def get_findings_details(findings_plugins):
     arialbold.set_bold(True)
     arialbold.set_align('bottom')
     arialbold.set_text_wrap()
+    # Used for IP, Plugin, Risk, Details, etc:
+    normaltext = workbook.add_format()
+    normaltext.set_font_name('Calibri')
+    normaltext.set_font_size(11)
+    normaltext.set_bold(False)
+    normaltext.set_align('top')
+    normaltext.set_align('vleft')
+    normaltext.set_text_wrap()
     # Used for "Certifier Comments:" and "Recommendation:":
     normalBOLDtext = workbook.add_format()
     normalBOLDtext.set_font_name('Calibri')
