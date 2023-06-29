@@ -63,7 +63,7 @@ def get_findings_details(findings_plugins):
     aCell.set_align('center')
     # Writing default items (POAM, IPs, etc):
     worksheet.write('A1', 'POA&M ID', aCell)
-    worksheet.write('B1', 'IP(s)', arialbold
+    worksheet.write('B1', 'IP(s)', arialbold)
     worksheet.set_column('C:C', 10.86, arialbold)
     worksheet.write('C1', 'Source /PluginID', arialbold)
     worksheet.set_column('D:D', 10.86, arialbold)
@@ -86,7 +86,7 @@ def get_findings_details(findings_plugins):
     testcount = 1
     for finding_plugin in findings_plugins:
         #This section fixes a bug when database schema for column nessus_host_id is not unique, it now works correctly
-        cur.execute("select V.nessus_host_id, V.scan_run_id from host_vuln V where plugin_id =%s", (finding_plugin))
+        cur.execute("select V.nessus_host_id, V.scan_run_id from host_vuln V where plugin_id =%s", (finding_plugin))        
         nss_unique_ids = cur.fetchall()
         ip_temp = ""
         ips = []
@@ -97,7 +97,7 @@ def get_findings_details(findings_plugins):
             #print("DEBUG-ips(growing)",ips,finding_plugin)
         cur.execute("select severity from plugin where plugin_id = %s", (finding_plugin))
         risk_level = cur.fetchall()
-        num2severity = {1: 'low' , 2: 'medium', 3: 'high', 4: 'critical')
+        num2severity = {1: 'low' , 2: 'medium', 3: 'high', 4: 'critical'}
         risk_level=num2severity[(risk_level[0])[0]]
         cur.execute("select name from plugin where plugin_id = %s", (finding_plugin))
         finding_name = ((cur.fetchall()[0])[0])
