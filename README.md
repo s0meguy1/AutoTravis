@@ -1,9 +1,9 @@
 # AutoTravis
-Work tool used for pulling nessus results from a MySQL database and adding them to a formatted report
+Work tool used for pulling nessus results from a MySQL database and adding them to a formatted xlxs report
 
 ## Usage
 
-Just run Auto-Travis.py
+Just run Auto-Travis.py! It outputs to a file called "SAR.for.travis.xlxs"
 
 ## Requirements
 
